@@ -1684,7 +1684,25 @@
   .empresa-page .tequisa-block .image-slot,
   .empresa-page .section.alt .image-slot {
     width: 100%;
+    max-width: 100%;
     min-height: 280px;
+    justify-self: stretch;
+    align-self: stretch;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .empresa-page .section.alt .container.split {
+    overflow: hidden;
+  }
+
+  .empresa-page .section.alt .panel {
+    text-align: center;
+  }
+
+  .empresa-page .section.alt .panel ul {
+    list-style: none;
+    padding: 0;
   }
 }
 
@@ -2922,3 +2940,5 @@ html { scroll-padding-top: 130px; }
   }
   .footer-bottom .container { justify-content: flex-start; }
 }
+
+

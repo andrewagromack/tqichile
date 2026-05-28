@@ -50,3 +50,30 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+// Hero dinámico del index: texto fijo, imágenes rotando cada 5 segundos
+(function () {
+  const hero = document.querySelector('.index-page .hero-dynamic-media');
+  if (!hero) return;
+
+  const slides = Array.from(hero.querySelectorAll('.hero-slide'));
+  if (slides.length < 2) return;
+
+  let current = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
+
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+  }
+
+  show(current);
+  const timer = window.setInterval(() => show(current + 1), 5000);
+
+  window.__TQI_HERO_ROTATOR__ = {
+    active: true,
+    slides: slides.length,
+    interval: 5000,
+    current: () => current,
+    stop: () => window.clearInterval(timer)
+  };
+})();

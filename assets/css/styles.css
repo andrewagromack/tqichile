@@ -2797,3 +2797,394 @@ html { scroll-padding-top: 130px; }
     min-height: auto;
   }
 }
+
+/* Hero dinámico index: slides WebP superpuestas, texto fijo */
+.index-page .hero.hero-seafood-bg,
+.hero.hero-seafood-bg {
+  background: #1E1147 !important;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-dynamic-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #1E1147;
+}
+
+.hero-dynamic-media .hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 900ms ease;
+}
+
+.hero-dynamic-media .hero-slide.is-active {
+  opacity: 1;
+}
+
+.index-page .hero.hero-seafood-bg::before,
+.hero.hero-seafood-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(30,17,71,.96) 0%, rgba(30,17,71,.90) 32%, rgba(30,17,71,.62) 58%, rgba(30,17,71,.28) 100%),
+    radial-gradient(circle at 82% 18%, rgba(232,81,26,.18), transparent 32%) !important;
+  pointer-events: none;
+}
+
+.index-page .hero.hero-seafood-bg .container,
+.hero.hero-seafood-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 980px) {
+  .hero-dynamic-media .hero-slide {
+    object-position: 72% center;
+  }
+
+  .index-page .hero.hero-seafood-bg::before,
+  .hero.hero-seafood-bg::before {
+    background:
+      linear-gradient(90deg, rgba(30,17,71,.97) 0%, rgba(30,17,71,.91) 56%, rgba(30,17,71,.58) 100%),
+      radial-gradient(circle at 78% 20%, rgba(232,81,26,.14), transparent 34%) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-dynamic-media .hero-slide {
+    object-position: 72% center;
+  }
+
+  .index-page .hero.hero-seafood-bg::before,
+  .hero.hero-seafood-bg::before {
+    background:
+      linear-gradient(90deg, rgba(30,17,71,.98) 0%, rgba(30,17,71,.94) 68%, rgba(30,17,71,.70) 100%),
+      radial-gradient(circle at 82% 20%, rgba(232,81,26,.10), transparent 35%) !important;
+  }
+}
+
+/* ANPEIX: imagen real en primer carrusel, ajustada al marco desktop/mobile */
+.carousel-image-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid #DED8EE;
+}
+
+.carousel-image-frame img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (max-width: 680px) {
+  .carousel-image-frame {
+    min-height: 190px;
+  }
+}
+
+
+
+/* Ajuste fino: bajar levemente la primera imagen del carrusel ANPEIX
+   y dejar siempre un espacio visible bajo la foto para captions editables */
+#anpeix .carousel-slide figcaption {
+  display: block;
+  min-height: 72px;
+}
+
+#anpeix .carousel-slide figcaption:empty::before {
+  content: " ";
+  white-space: pre;
+}
+
+
+/* ANPEIX carrusel superior: imágenes uniformes y espacio reservado para caption */
+#anpeix .carousel-slide.is-active {
+  grid-template-rows: minmax(230px, 1fr) 72px;
+}
+
+#anpeix .carousel-image-frame {
+  height: 100%;
+  min-height: 230px;
+}
+
+#anpeix .carousel-image-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+#anpeix .carousel-slide figcaption {
+  display: block;
+  min-height: 72px;
+  height: 72px;
+  box-sizing: border-box;
+}
+
+#anpeix .carousel-slide figcaption:empty::before {
+  content: " ";
+  white-space: pre;
+}
+
+@media (max-width: 680px) {
+  #anpeix .carousel-slide.is-active {
+    grid-template-rows: minmax(190px, 1fr) 72px;
+  }
+
+  #anpeix .carousel-image-frame {
+    min-height: 190px;
+  }
+}
+
+/* Ajuste v7: todas las imágenes del carrusel ANPEIX con la misma altura y captions editables visibles */
+#anpeix .carousel-slide.is-active {
+  grid-template-rows: 230px 72px;
+}
+
+#anpeix .carousel-image-frame {
+  height: 230px;
+  min-height: 230px;
+  overflow: hidden;
+}
+
+#anpeix .carousel-image-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+#anpeix .carousel-slide figcaption {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  height: 72px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 680px) {
+  #anpeix .carousel-slide.is-active {
+    grid-template-rows: 190px 72px;
+  }
+
+  #anpeix .carousel-image-frame {
+    height: 190px;
+    min-height: 190px;
+  }
+}
+
+
+/* Productos hero con imagen de centolla: esquema equivalente al hero dinámico del index */
+.products-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #1E1147 !important;
+}
+
+.products-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #1E1147;
+}
+
+.products-hero-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center right;
+  opacity: .78;
+  filter: brightness(.72) saturate(.82) contrast(.96);
+  transform: scale(1.01);
+}
+
+.products-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(30,17,71,.87) 0%, rgba(30,17,71,.82) 34%, rgba(30,17,71,.62) 60%, rgba(30,17,71,.36) 100%),
+    radial-gradient(circle at 82% 18%, rgba(232,81,26,.12), transparent 34%) !important;
+  pointer-events: none;
+}
+
+.products-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 980px) {
+  .products-hero-media img {
+    object-position: 72% center;
+    opacity: .54;
+  }
+
+  .products-hero::before {
+    background:
+      linear-gradient(90deg, rgba(30,17,71,.88) 0%, rgba(30,17,71,.84) 56%, rgba(30,17,71,.65) 100%),
+      radial-gradient(circle at 78% 20%, rgba(232,81,26,.08), transparent 34%) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .products-hero-media img {
+    object-position: 72% center;
+    opacity: .70;
+  }
+
+  .products-hero::before {
+    background:
+      linear-gradient(90deg, rgba(30,17,71,.84) 0%, rgba(30,17,71,.81) 68%, rgba(30,17,71,.67) 100%),
+      radial-gradient(circle at 82% 20%, rgba(232,81,26,.06), transparent 35%) !important;
+  }
+}
+/* FIN productos hero con imagen de centolla */
+
+
+/* Homologación visual de carruseles de producto */
+.product-card .media-carousel {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(15, 10, 40, 0.20);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.product-card .carousel-image-frame,
+.product-card .carousel-placeholder {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.product-card .carousel-slide figcaption {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* Carruseles de producto: slides con imagen uniforme y espacio editable para caption */
+.product-card .media-carousel .carousel-slide.is-active {
+  grid-template-rows: 230px 72px;
+}
+
+.product-card .media-carousel .carousel-image-frame {
+  height: 230px;
+  min-height: 230px;
+  overflow: hidden;
+}
+
+.product-card .media-carousel .carousel-image-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.product-card .media-carousel .carousel-slide figcaption {
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  height: 72px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 680px) {
+  .product-card .media-carousel .carousel-slide.is-active {
+    grid-template-rows: 190px 72px;
+  }
+
+  .product-card .media-carousel .carousel-image-frame {
+    height: 190px;
+    min-height: 190px;
+  }
+}
+
+
+/* Hero PhageGuard con imagen de proceso y overlay UX */
+.phageguard-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #076891;
+}
+
+.phageguard-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(7, 104, 145, .64) 0%, rgba(7, 104, 145, .74) 38%, rgba(7, 104, 145, .54) 64%, rgba(7, 104, 145, .36) 100%),
+    radial-gradient(circle at 80% 18%, rgba(255,255,255,.10), transparent 34%);
+}
+
+.phageguard-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.phageguard-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: .78;
+  filter: saturate(.9) contrast(.95) brightness(.86);
+}
+
+.phageguard-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .phageguard-hero::before {
+    background:
+      linear-gradient(90deg, rgba(7, 104, 145, .84) 0%, rgba(7, 104, 145, .78) 58%, rgba(7, 104, 145, .58) 100%),
+      radial-gradient(circle at 76% 20%, rgba(255,255,255,.08), transparent 34%);
+  }
+
+  .phageguard-hero-media img {
+    opacity: .70;
+    object-position: 62% center;
+  }
+}
+
+@media (max-width: 680px) {
+  .phageguard-hero::before {
+    background:
+      linear-gradient(90deg, rgba(7, 104, 145, .88) 0%, rgba(7, 104, 145, .64) 68%, rgba(7, 104, 145, .64) 100%),
+      radial-gradient(circle at 75% 20%, rgba(255,255,255,.06), transparent 35%);
+  }
+
+  .phageguard-hero-media img {
+    opacity: .64;
+    object-position: 72% center;
+  }
+}

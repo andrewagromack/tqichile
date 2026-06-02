@@ -7,8 +7,32 @@ body{background:#FAFAFC;margin:0}
 @media (max-width:720px){.site-header{height:76px}}
 @view-transition{navigation:auto}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:180ms;animation-timing-function:cubic-bezier(.2,.7,.3,1)}
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Asesoría técnica e implementación en planta — TQI Chile", "provider": {"@type": "Organization", "name": "TQI Chile", "url": "https://tqichile.cl/"}, "description": "Servicio de implementación técnica para plantas pesqueras y salmoneras en Chile: diagnóstico de proceso, diseño de prueba piloto, acompañamiento en terreno, implementación documental, cumplimiento normativo y capacitación al personal.", "areaServed": "CL", "serviceType": "Asesoría técnica en planta de proceso de alimentos"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo se estructura una prueba piloto con TQI Chile?", "acceptedAnswer": {"@type": "Answer", "text": "La prueba piloto sigue cuatro etapas: levantamiento del proceso (producto, flujo, merma, temperaturas), diseño del protocolo (dosis, tratamiento y control, KPI), ejecución con acompañamiento técnico en planta, e informe técnico-comercial con conclusión operacional y criterio de escalamiento."}}, {"@type": "Question", "name": "¿TQI Chile apoya en el cumplimiento normativo para usar coadyuvantes?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. TQI Chile apoya en la revisión de fichas técnicas y MSDS en contexto regulatorio chileno, declaración de aditivos y coadyuvantes ante SERNAPESCA y SEREMI, y documentación de respaldo para auditorías de clientes o mercados de destino."}}]}</script></head><body class="asesoria-page">
+
+/* Scope cards */
+.scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.scope-card{background:#fff;border:2px solid rgba(45,27,105,0.10);border-radius:14px;padding:2rem 1.75rem;display:flex;flex-direction:column;gap:0.75rem}
+.scope-card.nivel-1{border-top:4px solid #2D1B69}
+.scope-card.nivel-2{border-top:4px solid #F05A22}
+.scope-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.scope-card.nivel-1 .scope-tag{color:#2D1B69}
+.scope-card.nivel-2 .scope-tag{color:#F05A22}
+.scope-card h3{font-size:1.1rem;font-weight:800;color:#1E1147;margin:0}
+.scope-card p{font-size:0.9rem;color:#555;line-height:1.65;margin:0}
+.scope-card ul{margin:0.25rem 0 0;padding-left:1.1rem;display:flex;flex-direction:column;gap:0.3rem}
+.scope-card ul li{font-size:0.87rem;color:#555}
+
+/* Result band */
+.result-band{background:#1E1147;padding:2.5rem 0;margin-top:2rem;border-radius:12px}
+.result-band-inner{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center}
+.result-item{text-align:center;color:#fff;flex:1;min-width:160px}
+.result-item strong{display:block;font-size:1rem;font-weight:700;margin-bottom:0.3rem}
+.result-item span{font-size:0.82rem;color:rgba(255,255,255,0.65);line-height:1.4;display:block}
+
+@media(max-width:720px){.scope-grid{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Asesoría técnica e implementación en planta — TQI Chile", "provider": {"@type": "Organization", "name": "TQI Chile", "url": "https://tqichile.cl/"}, "description": "Servicio de implementación técnica para plantas pesqueras y salmoneras en Chile: diagnóstico de proceso, diseño de prueba piloto, acompañamiento en terreno, implementación documental, cumplimiento normativo y capacitación al personal.", "areaServed": "CL", "serviceType": "Asesoría técnica en planta de proceso de alimentos"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo se estructura una prueba piloto con TQI Chile?", "acceptedAnswer": {"@type": "Answer", "text": "La prueba piloto sigue cuatro etapas: levantamiento del proceso (producto, flujo, merma, temperaturas), diseño del protocolo (dosis, tratamiento y control, KPI), ejecución con acompañamiento técnico en planta, e informe técnico-comercial con conclusión operacional y criterio de escalamiento."}}, {"@type": "Question", "name": "¿TQI Chile apoya en el cumplimiento normativo para usar coadyuvantes?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. TQI Chile apoya en la revisión de fichas técnicas y MSDS en contexto regulatorio chileno, declaración de aditivos y coadyuvantes ante SERNAPESCA y SEREMI, y documentación de respaldo para auditorías de clientes o mercados de destino."}}]}</script>
+</head><body class="asesoria-page">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <div class="topbar"><div class="container"><span>Soporte local en Chile · Soluciones TEQUISA con implementación técnica en planta</span><a href="https://tequisa.com/" target="_blank" rel="noopener">TEQUISA · España</a></div></div>
 <header class="site-header">
@@ -31,87 +55,82 @@ body{background:#FAFAFC;margin:0}
     </div>
   </nav>
 </header><main id="contenido">
-<section class="page-hero asesoria-hero" style="position:relative;overflow:hidden;"><div aria-hidden="true" style="position:absolute;inset:0;z-index:0;"><img src="assets/img/hero-asesoria-planta.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:65% center;" decoding="async" fetchpriority="high"></div><div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(30,17,71,.97) 0%,rgba(30,17,71,.90) 40%,rgba(30,17,71,.60) 68%,rgba(30,17,71,.28) 100%);"></div><div class="container" style="position:relative;z-index:2;"><div><div class="breadcrumb"><a href="index.html">Inicio</a> / <span aria-current="page">Asesoría</span></div><h1>Implementación técnica para que la prueba mida algo real.</h1><p>El valor no está solo en el producto. Está en diseñar una prueba que producción, calidad y gerencia puedan leer sin discusión: objetivo, control, tratamiento, variables críticas y criterio de escalamiento.</p><div class="hero-actions"><a class="btn btn-primary" href="contacto.html">Diseñar prueba piloto</a><a class="btn btn-outline" href="#capacidad-tecnica">Ver capacidad técnica</a></div></div></div></section>
-<section class="section timeline-section"><div class="container"><div class="section-head"><div class="chevron"></div><div><div class="kicker">Proceso de trabajo</div><h2>Prueba piloto con trazabilidad técnica.</h2><p class="section-lead">La evaluación se ordena como una línea de tiempo: primero se define el problema, luego se diseña la comparación y finalmente se ejecuta con registros útiles para decisión operacional.</p></div></div><div class="timeline"><article class="timeline-step"><div class="step-num">01</div><h3>Levantamiento</h3><p>Producto, flujo, merma, tiempos, temperatura y cuello de botella.</p></article><article class="timeline-step"><div class="step-num">02</div><h3>Diseño</h3><p>Control, tratamiento, dosis, muestra, registros y KPI.</p></article><article class="timeline-step"><div class="step-num">03</div><h3>Ejecución</h3><p>Acompañamiento en planta, observación de proceso y ajuste operativo.</p></article><article class="timeline-step"><div class="step-num">04</div><h3>Informe</h3><p>Resumen técnico-comercial para decisión de escalamiento.</p></article></div></div></section>
-<section class="section capability-section" id="capacidad-tecnica">
+
+<!-- HERO -->
+<section class="page-hero asesoria-hero" style="position:relative;overflow:hidden;"><div aria-hidden="true" style="position:absolute;inset:0;z-index:0;"><img src="assets/img/hero-asesoria-planta.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:65% center;" decoding="async" fetchpriority="high"></div><div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(30,17,71,.97) 0%,rgba(30,17,71,.90) 40%,rgba(30,17,71,.60) 68%,rgba(30,17,71,.28) 100%);"></div><div class="container" style="position:relative;z-index:2;"><div><div class="breadcrumb"><a href="index.html">Inicio</a> / <span aria-current="page">Asesoría</span></div><h1>Implementación técnica para que la prueba mida algo real.</h1><p>El valor no está solo en el producto. Está en diseñar una prueba que producción, calidad y gerencia puedan leer sin discusión: objetivo, control, tratamiento, variables críticas y criterio de escalamiento.</p><div class="hero-actions"><a class="btn btn-primary" href="contacto.html">Diseñar prueba piloto</a><a class="btn btn-outline" href="#proceso">Ver cómo funciona</a></div></div></div></section>
+
+<!-- PROCESO -->
+<section class="section timeline-section" id="proceso">
   <div class="container">
-    <div class="capability-layout">
-      <div class="capability-copy">
-        <div class="kicker">Capacidad técnica</div>
-        <h2>Soporte basado en operación, QA e inocuidad.</h2>
-        <p class="section-lead">La implementación se aborda con criterio de planta: entender el flujo productivo, ubicar el punto de pérdida o riesgo, definir una prueba controlada y convertir el resultado en una decisión operativa.</p>
-      </div>
-
-      <div class="capability-proof">
-        <article>
-          <span>01</span>
-          <h3>Proceso industrial</h3>
-          <p>Lectura de línea, tiempos, temperatura, manipulación, drenaje, congelación, glaseo, empaque y puntos de variabilidad.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>QA e inocuidad</h3>
-          <p>Controles compatibles con BPM, SSOP, HACCP/PAC, verificación microbiológica y registros útiles para auditoría.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Resultado económico</h3>
-          <p>Traducción de rendimiento, merma, reproceso, estabilidad y rechazo en indicadores productivos entendibles para gerencia.</p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section alt service-scope-section">
-  <div class="container">
-    <div class="section-head">
-      <div class="chevron"></div>
-      <div>
-        <div class="kicker">Alcance del acompañamiento</div>
-        <h2>Soporte proporcional al nivel de implementación.</h2>
-        <p class="section-lead">La asistencia no debe verse como una lista de tareas sueltas, sino como niveles de acompañamiento según el riesgo, la complejidad de la matriz y la profundidad de validación que necesita la planta.</p>
-      </div>
-    </div>
-
-    <div class="service-scope">
-      <article class="scope-card">
-        <div class="scope-tag">Soporte base</div>
-        <h3>Implementación inicial</h3>
-        <p>Para una primera evaluación técnica con foco en uso correcto, condiciones de aplicación y lectura preliminar de resultados.</p>
-        <ul>
-          <li>Orientación de uso del producto.</li>
-          <li>Diseño básico de protocolo piloto.</li>
-          <li>Revisión de resultados iniciales.</li>
-        </ul>
-      </article>
-
-      <article class="scope-card">
-        <div class="scope-tag">Implementación avanzada</div>
-        <h3>Validación en planta</h3>
-        <p>Para plantas que necesitan respaldar la decisión con observación en terreno, registros, informe técnico y ajuste documental.</p>
-        <ul>
-          <li>Visita técnica a planta.</li>
-          <li>Informe formal de resultados.</li>
-          <li>Capacitación operativa y QA.</li>
-          <li>Ajuste de procedimiento interno.</li>
-        </ul>
-      </article>
-
-      <article class="scope-card">
-        <div class="scope-tag">Resultado esperado</div>
-        <h3>Decisión trazable</h3>
-        <p>La prueba debe terminar con una conclusión operacional: escalar, ajustar condiciones, repetir con mejor diseño o descartar.</p>
-        <ul>
-          <li>Conclusión técnica clara.</li>
-          <li>Variables críticas identificadas.</li>
-          <li>Criterio de continuidad definido.</li>
-        </ul>
-      </article>
+    <div class="section-head"><div class="chevron"></div><div>
+      <div class="kicker">Proceso de trabajo</div>
+      <h2>Cuatro pasos desde el problema hasta la decisión.</h2>
+      <p class="section-lead">La evaluación se ordena como una línea de tiempo: primero se define el problema, luego se diseña la comparación, se ejecuta con registros y se entrega una conclusión operacional — no solo datos.</p>
+    </div></div>
+    <div class="timeline">
+      <article class="timeline-step"><div class="step-num">01</div><h3>Levantamiento</h3><p>Producto, flujo, merma, tiempos, temperatura y cuello de botella.</p></article>
+      <article class="timeline-step"><div class="step-num">02</div><h3>Diseño</h3><p>Control, tratamiento, dosis, muestra, registros y KPI. La prueba se diseña para que el resultado sea interpretable.</p></article>
+      <article class="timeline-step"><div class="step-num">03</div><h3>Ejecución</h3><p>Acompañamiento en planta, observación de proceso y ajuste operativo en tiempo real.</p></article>
+      <article class="timeline-step"><div class="step-num">04</div><h3>Informe</h3><p>Resumen técnico-comercial para decisión de escalamiento. Con criterio claro: escalar, ajustar o descartar.</p></article>
     </div>
   </div>
 </section>
 
-<section class="cta-band"><div class="container"><h2>Diseñemos una prueba que producción y calidad puedan evaluar.</h2><p>El objetivo es medir rendimiento, estabilidad de producto, comportamiento operacional y factibilidad de escalamiento con datos claros.</p><a class="btn btn-primary" href="contacto.html">Agendar levantamiento</a></div></section>
+<!-- NIVELES DE SERVICIO -->
+<section class="section alt" id="niveles">
+  <div class="container">
+    <div class="section-head"><div class="chevron"></div><div>
+      <div class="kicker">Niveles de acompañamiento</div>
+      <h2>El soporte se ajusta a lo que necesita tu planta.</h2>
+      <p class="section-lead">No todas las plantas necesitan el mismo nivel de intervención. El punto de partida depende de lo que ya tienen, del riesgo involucrado y de la profundidad de validación que requiere la decisión.</p>
+    </div></div>
+
+    <div class="scope-grid">
+      <article class="scope-card nivel-1">
+        <div class="scope-tag">Primera evaluación</div>
+        <h3>Inicio rápido</h3>
+        <p>Para plantas que quieren evaluar el producto sin comprometer tiempo de producción. Foco en uso correcto, condiciones de aplicación y lectura preliminar de resultados.</p>
+        <ul>
+          <li>Orientación de uso y condiciones de aplicación</li>
+          <li>Diseño básico de protocolo piloto</li>
+          <li>Revisión remota o presencial de resultados iniciales</li>
+        </ul>
+      </article>
+
+      <article class="scope-card nivel-2">
+        <div class="scope-tag">Validación completa</div>
+        <h3>Implementación con respaldo</h3>
+        <p>Para plantas que necesitan respaldar la decisión con datos verificables, observación en terreno y documentación compatible con su sistema de calidad.</p>
+        <ul>
+          <li>Visita técnica a planta con acompañamiento en línea</li>
+          <li>Informe formal de resultados con criterio de escalamiento</li>
+          <li>Capacitación operativa y QA</li>
+          <li>Implementación documental y ajuste de procedimiento interno</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="result-band">
+      <div class="container result-band-inner">
+        <div class="result-item"><strong>Conclusión técnica clara</strong><span>Escalar, ajustar o descartar — sin ambigüedad</span></div>
+        <div class="result-item"><strong>Variables críticas identificadas</strong><span>Las que mandan el resultado en tu proceso específico</span></div>
+        <div class="result-item"><strong>Documentación lista</strong><span>Compatible con PAC, HACCP y requisitos de cliente</span></div>
+        <div class="result-item"><strong>Criterio de continuidad</strong><span>Qué medir para sostener el resultado en el tiempo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band"><div class="container">
+  <h2>Una prueba bien diseñada no interrumpe tu proceso.</h2>
+  <p>Se estructura para correr en paralelo con tu operación. Si no hay resultado medible, no hay nada que escalar.</p>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="contacto.html">Agendar levantamiento</a>
+    <a class="btn btn-secondary" href="https://wa.me/56998791270?text=Hola%2C%20quiero%20diseñar%20una%20prueba%20piloto%20con%20TQI%20Chile" target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+  </div>
+</div></section>
+
 </main>
 <a class="wa-float" href="https://wa.me/56998791270?text=Hola%2C%20quiero%20conversar%20sobre%20soluciones%20TQI%20Chile%20para%20planta%20de%20proceso" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
   <path d="M16.02 3.2A12.73 12.73 0 0 0 5.14 22.5L3.6 28.8l6.45-1.52A12.78 12.78 0 1 0 16.02 3.2Zm0 2.28a10.48 10.48 0 0 1 8.88 16.05 10.46 10.46 0 0 1-13.86 3.5l-.46-.25-3.68.86.88-3.58-.3-.49A10.46 10.46 0 0 1 16.02 5.48Zm-4.13 4.73c-.24 0-.62.09-.95.44-.33.36-1.25 1.22-1.25 2.98 0 1.76 1.28 3.46 1.46 3.7.18.24 2.47 3.96 6.12 5.39 3.03 1.19 3.65.95 4.31.89.66-.06 2.13-.87 2.43-1.71.3-.84.3-1.56.21-1.71-.09-.15-.33-.24-.69-.42-.36-.18-2.13-1.05-2.46-1.17-.33-.12-.57-.18-.81.18-.24.36-.93 1.17-1.14 1.41-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.78-1.07-.95-1.79-2.13-2-2.49-.21-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.7-.59-.6-.81-.61h-.68Z"/>
@@ -126,7 +145,6 @@ body{background:#FAFAFC;margin:0}
       <p>Tecnología alimentaria aplicada para plantas pesqueras, salmoneras y alimentos industriales.</p>
       <div class="footer-proof">Soporte local · Soluciones TEQUISA · Implementación en planta</div>
     </div>
-
     <nav class="footer-col" aria-label="Soluciones TQI Chile">
       <h3>Soluciones</h3>
       <a href="productos.html#anpeix">ANPEIX 100 PLUS SP</a>
@@ -135,7 +153,6 @@ body{background:#FAFAFC;margin:0}
       <a href="asesoria.html">Asesoría técnica</a>
       <a href="resultados.html">Resultados</a>
     </nav>
-
     <nav class="footer-col" aria-label="Empresa y recursos">
       <h3>Empresa</h3>
       <a href="empresa.html">Empresa</a>
@@ -144,7 +161,6 @@ body{background:#FAFAFC;margin:0}
       <a href="politica-privacidad.html">Política de privacidad</a>
       <a href="https://tequisa.com/" target="_blank" rel="noopener">TEQUISA · España</a>
     </nav>
-
     <div class="footer-col footer-contact">
       <h3>Contacto</h3>
       <a href="mailto:andrew@tqichile.cl">andrew@tqichile.cl</a>

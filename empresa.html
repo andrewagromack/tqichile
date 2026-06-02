@@ -7,6 +7,34 @@ body{background:#FAFAFC;margin:0}
 @media (max-width:720px){.site-header{height:76px}}
 @view-transition{navigation:auto}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:180ms;animation-timing-function:cubic-bezier(.2,.7,.3,1)}
+
+/* Andrew profile card */
+.andrew-section{background:#fff}
+.andrew-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.andrew-photo-slot{background:#F0EDF8;border-radius:12px;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:#8B82B0;font-size:0.82rem;text-align:center;padding:1rem}
+.andrew-photo-slot svg{opacity:0.35}
+.andrew-copy{display:flex;flex-direction:column;gap:1.25rem}
+.andrew-name{font-size:1.5rem;font-weight:800;color:#1E1147;margin:0;line-height:1.2}
+.andrew-title{font-size:0.82rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#F05A22;margin:0}
+.andrew-copy p{font-size:0.95rem;color:#444;line-height:1.7;margin:0}
+.andrew-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.25rem}
+.andrew-tag{font-size:0.75rem;font-weight:600;padding:0.3rem 0.75rem;border-radius:99px;background:#F0EDF8;color:#2D1B69}
+
+/* TEQUISA block */
+.tequisa-section{background:#F5F3FB}
+.tequisa-grid{display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:center}
+.tequisa-stats{display:flex;flex-direction:column;gap:1rem}
+.tequisa-stat{text-align:center;background:#fff;border-radius:10px;padding:1.25rem 1rem}
+.tequisa-stat strong{display:block;font-size:1.4rem;font-weight:800;color:#2D1B69}
+.tequisa-stat span{font-size:0.78rem;color:#666}
+
+@media(max-width:860px){
+  .andrew-grid{grid-template-columns:1fr}
+  .andrew-photo-slot{aspect-ratio:16/7}
+  .tequisa-grid{grid-template-columns:1fr}
+  .tequisa-stats{flex-direction:row;flex-wrap:wrap}
+  .tequisa-stat{flex:1;min-width:120px}
+}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "TQI Chile", "url": "https://tqichile.cl/", "email": "andrew@tqichile.cl", "areaServed": "CL", "description": "Representación técnica y soporte de implementación en planta para tecnologías alimentarias TEQUISA y PhageGuard de Micreos en Chile.", "parentOrganization": {"@type": "Organization", "name": "TEQUISA - Técnicas Químicas Industriales S.A.", "url": "https://tequisa.com/"}, "founder": {"@type": "Person", "name": "Andrew MacKinnon", "jobTitle": "Médico Veterinario"}}</script></head><body class="empresa-page">
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 <div class="topbar"><div class="container"><span>Soporte local en Chile · Soluciones TEQUISA con implementación técnica en planta</span><a href="https://tequisa.com/" target="_blank" rel="noopener">TEQUISA · España</a></div></div>
@@ -30,69 +58,89 @@ body{background:#FAFAFC;margin:0}
     </div>
   </nav>
 </header><main id="contenido">
-<section class="page-hero empresa-hero" style="position:relative;overflow:hidden;"><div aria-hidden="true" style="position:absolute;inset:0;z-index:0;"><img src="assets/img/hero-empresa-terreno.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:65% center;" decoding="async" fetchpriority="high"></div><div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(30,17,71,.97) 0%,rgba(30,17,71,.90) 40%,rgba(30,17,71,.60) 68%,rgba(30,17,71,.28) 100%);"></div><div class="container" style="position:relative;z-index:2;"><div><div class="breadcrumb"><a href="index.html">Inicio</a> / <span aria-current="page">Empresa</span></div><h1>Respaldo TEQUISA con implementación técnica local.</h1><p>TQI Chile articula soporte local para soluciones TEQUISA, documentación técnica, pruebas piloto y acompañamiento para plantas pesqueras, salmoneras y alimentos industriales. El foco está en implementar tecnologías con criterio de proceso, datos verificables y acompañamiento técnico en planta.</p><div class="hero-actions"><a class="btn btn-primary" href="contacto.html">Contactar</a><a class="btn btn-outline" href="#experiencia-pesquera">Ver experiencia sectorial</a></div></div></div></section>
-<section class="section tequisa-block"><div class="container split"><div class="panel"><div class="kicker">TEQUISA · España</div><h3>Fabricante matriz y respaldo técnico</h3><p>TEQUISA —Técnicas Químicas Industriales S.A.— desarrolla y fabrica soluciones de tecnología alimentaria para optimizar calidad, eficiencia y rentabilidad en la industria alimentaria global.</p><p>Su portafolio incluye gamas como TQI Anpex, TQI Anpeix, TQI Anpex Glass y TQI Blantex, con foco en estabilización, glaseo, protección antioxidante y mejora de comportamiento de producto en proceso.</p><div class="trust-row compact"><span>+40 años</span><span>+100 productos</span><span>29 países</span><span>Vigo · Pontevedra</span></div><a class="card-link" href="https://tequisa.com/" target="_blank" rel="noopener">Ver sitio oficial TEQUISA</a></div><figure class="image-slot"><figcaption><strong>Respaldo corporativo TEQUISA</strong>Planta, laboratorio o documentación técnica</figcaption></figure></div></section>
-<section class="section alt" id="experiencia-pesquera">
+
+<!-- HERO -->
+<section class="page-hero empresa-hero" style="position:relative;overflow:hidden;"><div aria-hidden="true" style="position:absolute;inset:0;z-index:0;"><img src="assets/img/hero-empresa-terreno.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:65% center;" decoding="async" fetchpriority="high"></div><div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(30,17,71,.97) 0%,rgba(30,17,71,.90) 40%,rgba(30,17,71,.60) 68%,rgba(30,17,71,.28) 100%);"></div><div class="container" style="position:relative;z-index:2;"><div><div class="breadcrumb"><a href="index.html">Inicio</a> / <span aria-current="page">Empresa</span></div><h1>Soporte técnico con experiencia real en planta de proceso.</h1><p>TQI Chile combina tecnología alimentaria europea con implementación local directa. Quien te atiende conoce el proceso desde adentro — antes de representar estas soluciones, las usó.</p><div class="hero-actions"><a class="btn btn-primary" href="contacto.html">Agendar visita técnica</a><a class="btn btn-outline" href="#andrew">Quién está detrás</a></div></div></div></section>
+
+<!-- ANDREW — primero -->
+<section class="section andrew-section" id="andrew">
   <div class="container">
-    <div class="sector-experience">
-      <div class="sector-copy">
-        <div class="kicker">Experiencia en industria pesquera</div>
-        <h2>Implementación con lectura real de planta.</h2>
-        <p class="section-lead">El soporte local combina experiencia en producción, aseguramiento de calidad, PAC/HACCP, auditorías y operación en plantas de proceso. Esto permite conversar con producción, QA y gerencia usando el mismo lenguaje: rendimiento, merma, inocuidad, especificación, trazabilidad y factibilidad operacional.</p>
+    <div class="andrew-grid">
+      <div class="andrew-photo-slot" aria-label="Foto Andrew MacKinnon">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="18" r="8" stroke="#2D1B69" stroke-width="2"/><path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#2D1B69" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>Foto Andrew MacKinnon</span>
       </div>
-
-      <div class="sector-proof">
-        <article>
-          <span>01</span>
-          <h3>Producción y rendimiento</h3>
-          <p>Evaluación de pérdidas, drenaje, cocción, congelación, glaseo, manipulación y puntos donde el proceso genera merma o variabilidad.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>QA, PAC y requisitos de cliente</h3>
-          <p>Lectura técnica compatible con inocuidad, registros, programas de prerrequisitos, análisis de peligros y documentación para auditoría.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Decisión técnico-comercial</h3>
-          <p>Traducción de resultados de prueba en criterios de escalamiento: mejora real, costo de uso, impacto en calidad y continuidad operacional.</p>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="section local-support-section" id="soporte-tecnico-local">
-  <div class="container">
-    <div class="local-support-card">
-      <div class="local-support-copy">
-        <div class="kicker">Soporte técnico local</div>
-        <h2>Experiencia sectorial aplicada a plantas pesqueras y salmoneras.</h2>
-        <p class="section-lead">La implementación en Chile cuenta con liderazgo técnico local con experiencia directa en producción, aseguramiento de calidad e inocuidad en plantas de proceso. Esto permite diseñar pruebas piloto con criterios reales de planta: rendimiento, merma, flujo operacional, requisitos PAC/HACCP, documentación técnica y factibilidad de escalamiento.</p>
-        <p>El objetivo no es solo entregar un producto, sino acompañar su aplicación bajo condiciones controladas y generar información útil para producción, calidad y gerencia.</p>
-
-        <div class="local-proof-row">
-          <span>Producción y QA</span>
-          <span>PAC / HACCP</span>
-          <span>Pruebas industriales</span>
+      <div class="andrew-copy">
+        <div>
+          <p class="andrew-title">Responsable técnico</p>
+          <h2 class="andrew-name">Andrew MacKinnon</h2>
         </div>
-      </div>
-
-      <div class="local-support-aside">
-        <div class="profile-placeholder">
-          <strong>Responsable técnico local</strong>
-          <span>Foto técnica o registro en planta</span>
-        </div>
-        <div class="profile-caption">
-          <strong>Andrew MacKinnon</strong>
-          <span>Médico Veterinario · Producción, calidad e inocuidad alimentaria</span>
+        <p>Médico Veterinario con experiencia directa en producción industrial pesquera. Antes de distribuir estas soluciones, las evaluó y aplicó como Gerente de Producción en planta de proceso de centolla y centollón — lo que significa que el soporte no parte de un catálogo, sino de haber enfrentado los mismos problemas de rendimiento, merma e inocuidad que tiene el cliente.</p>
+        <p>Esa experiencia es lo que permite diseñar pruebas piloto con criterio operacional real, hablar el mismo lenguaje que producción y QA, y traducir resultados en decisiones que gerencia pueda evaluar.</p>
+        <div class="andrew-tags">
+          <span class="andrew-tag">Producción industrial</span>
+          <span class="andrew-tag">QA e inocuidad</span>
+          <span class="andrew-tag">PAC / HACCP</span>
+          <span class="andrew-tag">Crustáceos</span>
+          <span class="andrew-tag">Salmonídeos</span>
+          <span class="andrew-tag">Pruebas piloto</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section alt"><div class="container split"><div class="panel"><div class="kicker">Enfoque</div><h3>Venta consultiva para industria regulada</h3><p>La propuesta combina coadyuvantes tecnológicos, soluciones de glaseo, intervención microbiológica y soporte para pruebas piloto con criterio QA.</p><ul><li>Soporte técnico a clientes industriales.</li><li>Diseño de pruebas y criterios de medición.</li><li>Foco en inocuidad, rendimiento y estabilidad de proceso.</li></ul></div><figure class="image-slot"><figcaption><strong>Implementación en planta</strong>Soporte técnico, aplicación o evaluación de proceso</figcaption></figure></div></section>
-<section class="section"><div class="container"><div class="cards"><article class="card"><div class="label">Respaldo</div><h3>Documentación técnica</h3><p>Fichas, boletines, MSDS y protocolos de uso según producto.</p></article><article class="card"><div class="label">Experiencia</div><h3>Proceso pesquero</h3><p>Lenguaje y criterios compatibles con producción, QA y requisitos de cliente.</p></article><article class="card"><div class="label">Implementación</div><h3>Seguimiento en planta</h3><p>Pruebas piloto diseñadas para tomar decisiones con datos.</p></article></div></div></section>
+<!-- CAPACIDAD TÉCNICA -->
+<section class="section alt" id="capacidad">
+  <div class="container">
+    <div class="section-head">
+      <div class="chevron"></div>
+      <div>
+        <div class="kicker">Capacidad técnica</div>
+        <h2>Lo que permite hacer este perfil en tu planta.</h2>
+        <p class="section-lead">La combinación de experiencia en producción, QA e inocuidad permite intervenir en distintos niveles del proceso — no solo en la aplicación del producto.</p>
+      </div>
+    </div>
+    <div class="process">
+      <div class="step"><div class="step-num">01</div><h3>Lectura de proceso</h3><p>Identificar puntos de merma, variabilidad, drenaje, temperatura, manipulación y comportamiento del producto en línea.</p></div>
+      <div class="step"><div class="step-num">02</div><h3>Diseño de prueba</h3><p>Definir control, tratamiento, dosis, muestra, variables críticas y criterio de decisión. La prueba genera datos útiles, no solo observaciones.</p></div>
+      <div class="step"><div class="step-num">03</div><h3>QA e inocuidad</h3><p>Integración con PAC/HACCP, documentación regulatoria, registros de trazabilidad y compatibilidad con requisitos de clientes y mercados.</p></div>
+      <div class="step"><div class="step-num">04</div><h3>Resultado accionable</h3><p>Informe técnico-comercial con conclusión operacional: escalar, ajustar o descartar. Lenguaje que producción, calidad y gerencia pueden leer sin traducción.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEQUISA — respaldo, segundo -->
+<section class="section tequisa-section" id="tequisa">
+  <div class="container">
+    <div class="tequisa-grid">
+      <div>
+        <div class="kicker">Fabricante · España</div>
+        <h2>TEQUISA — el respaldo detrás de los productos.</h2>
+        <p class="section-lead">Técnicas Químicas Industriales S.A. desarrolla y fabrica las soluciones que TQI Chile implementa. Más de 40 años de experiencia en tecnología alimentaria industrial, con presencia en 29 países y un portafolio de más de 100 productos.</p>
+        <p style="font-size:0.92rem;color:#555;line-height:1.7;margin-top:0.75rem;">Su portafolio incluye las gamas TQI Anpex, TQI Anpeix, TQI Anpex Glass y TQI Blantex — con foco en estabilización, glaseo, protección antioxidante y mejora de comportamiento de producto en proceso. Toda la documentación técnica, MSDS y fichas de producto cuentan con respaldo de origen europeo.</p>
+        <a class="card-link" href="https://tequisa.com/" target="_blank" rel="noopener" style="display:inline-block;margin-top:1.25rem;">Ver sitio oficial TEQUISA →</a>
+      </div>
+      <div class="tequisa-stats">
+        <div class="tequisa-stat"><strong>+40</strong><span>años de experiencia</span></div>
+        <div class="tequisa-stat"><strong>+100</strong><span>productos</span></div>
+        <div class="tequisa-stat"><strong>29</strong><span>países</span></div>
+        <div class="tequisa-stat"><strong>Vigo</strong><span>Pontevedra · España</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band"><div class="container">
+  <h2>¿Quieres saber si esto aplica a tu proceso?</h2>
+  <p>Una conversación de 20 minutos es suficiente para entender si hay un punto de mejora real y si vale la pena diseñar una prueba.</p>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="contacto.html">Agendar visita técnica</a>
+    <a class="btn btn-secondary" href="https://wa.me/56998791270?text=Hola%2C%20quiero%20conversar%20sobre%20TQI%20Chile" target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+  </div>
+</div></section>
+
 </main>
 <a class="wa-float" href="https://wa.me/56998791270?text=Hola%2C%20quiero%20conversar%20sobre%20soluciones%20TQI%20Chile%20para%20planta%20de%20proceso" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
   <path d="M16.02 3.2A12.73 12.73 0 0 0 5.14 22.5L3.6 28.8l6.45-1.52A12.78 12.78 0 1 0 16.02 3.2Zm0 2.28a10.48 10.48 0 0 1 8.88 16.05 10.46 10.46 0 0 1-13.86 3.5l-.46-.25-3.68.86.88-3.58-.3-.49A10.46 10.46 0 0 1 16.02 5.48Zm-4.13 4.73c-.24 0-.62.09-.95.44-.33.36-1.25 1.22-1.25 2.98 0 1.76 1.28 3.46 1.46 3.7.18.24 2.47 3.96 6.12 5.39 3.03 1.19 3.65.95 4.31.89.66-.06 2.13-.87 2.43-1.71.3-.84.3-1.56.21-1.71-.09-.15-.33-.24-.69-.42-.36-.18-2.13-1.05-2.46-1.17-.33-.12-.57-.18-.81.18-.24.36-.93 1.17-1.14 1.41-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.78-1.07-.95-1.79-2.13-2-2.49-.21-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.7-.59-.6-.81-.61h-.68Z"/>
@@ -107,7 +155,6 @@ body{background:#FAFAFC;margin:0}
       <p>Tecnología alimentaria aplicada para plantas pesqueras, salmoneras y alimentos industriales.</p>
       <div class="footer-proof">Soporte local · Soluciones TEQUISA · Implementación en planta</div>
     </div>
-
     <nav class="footer-col" aria-label="Soluciones TQI Chile">
       <h3>Soluciones</h3>
       <a href="productos.html#anpeix">ANPEIX 100 PLUS SP</a>
@@ -116,7 +163,6 @@ body{background:#FAFAFC;margin:0}
       <a href="asesoria.html">Asesoría técnica</a>
       <a href="resultados.html">Resultados</a>
     </nav>
-
     <nav class="footer-col" aria-label="Empresa y recursos">
       <h3>Empresa</h3>
       <a href="empresa.html">Empresa</a>
@@ -125,7 +171,6 @@ body{background:#FAFAFC;margin:0}
       <a href="politica-privacidad.html">Política de privacidad</a>
       <a href="https://tequisa.com/" target="_blank" rel="noopener">TEQUISA · España</a>
     </nav>
-
     <div class="footer-col footer-contact">
       <h3>Contacto</h3>
       <a href="mailto:andrew@tqichile.cl">andrew@tqichile.cl</a>

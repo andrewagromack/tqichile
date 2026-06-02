@@ -7,6 +7,26 @@ body{background:#FAFAFC;margin:0}
 @media (max-width:720px){.site-header{height:76px}}
 @view-transition{navigation:auto}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:180ms;animation-timing-function:cubic-bezier(.2,.7,.3,1)}
+.split-enfoques{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.split-card{background:#fff;border:2px solid rgba(45,27,105,0.12);border-radius:14px;padding:2rem 1.75rem;display:flex;flex-direction:column;gap:0.75rem;transition:box-shadow 0.22s ease,transform 0.22s ease,border-color 0.22s ease;cursor:default}
+.split-card.rendimiento{border-top:4px solid #F05A22}
+.split-card.inocuidad{border-top:4px solid #1a6e3c}
+.split-card:hover{box-shadow:0 12px 44px rgba(45,27,105,0.14);transform:translateY(-4px)}
+.split-card.rendimiento:hover{border-color:#F05A22}
+.split-card.inocuidad:hover{border-color:#1a6e3c}
+.split-card .label{font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.split-card.rendimiento .label{color:#F05A22}
+.split-card.inocuidad .label{color:#1a6e3c}
+.split-card h3{font-size:1.2rem;font-weight:800;color:#1E1147;margin:0}
+.split-card p{font-size:0.92rem;color:#555;line-height:1.65;margin:0}
+.split-card ul{margin:0.25rem 0 0;padding-left:1.1rem;display:flex;flex-direction:column;gap:0.3rem}
+.split-card ul li{font-size:0.88rem;color:#555}
+.split-card .card-link{margin-top:auto;padding-top:0.75rem;font-size:0.82rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:opacity 0.15s}
+.split-card.rendimiento .card-link{color:#F05A22}
+.split-card.inocuidad .card-link{color:#1a6e3c}
+.split-card:hover .card-link{opacity:0.8}
+.credencial-inline strong{color:#1E1147}
+@media(max-width:720px){.split-enfoques{grid-template-columns:1fr}}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "TQI Chile", "url": "https://tqichile.cl/", "email": "andrew@tqichile.cl", "areaServed": "CL", "description": "Soporte técnico local en Chile para coadyuvantes tecnológicos y soluciones de control microbiológico para plantas pesqueras y salmoneras.", "parentOrganization": {"@type": "Organization", "name": "TEQUISA - Técnicas Químicas Industriales S.A.", "url": "https://tequisa.com/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "TQI Chile", "url": "https://tqichile.cl/", "inLanguage": "es"}</script><link rel="preload" as="image" href="assets/img/hero-centolla.webp" type="image/webp">
 </head><body class="index-page">
@@ -32,6 +52,8 @@ body{background:#FAFAFC;margin:0}
     </div>
   </nav>
 </header><main id="contenido">
+
+<!-- HERO -->
 <section class="hero hero-simple hero-seafood-bg">
   <div class="hero-dynamic-media" aria-hidden="true">
     <img class="hero-slide is-active" src="assets/img/hero-seafood-tqi.webp" alt="" decoding="async" fetchpriority="high">
@@ -39,27 +61,77 @@ body{background:#FAFAFC;margin:0}
     <img class="hero-slide" src="assets/img/hero-langostinos.webp" alt="" decoding="async" loading="lazy">
     <img class="hero-slide" src="assets/img/hero-salmon.webp" alt="" decoding="async" loading="lazy">
   </div>
-  <div class="container"><div><div class="kicker">Soporte técnico en planta - Chile</div><h1>Menos merma, mejor rendimiento, mejor percepción de valor</h1><p>TQI Chile ofrece y aplica coadyuvantes y aditivos TEQUISA, de origen Europeo, junto con soluciones de control microbiológico Phageguard, desarrolladas por Micreos. Solo tecnología Europea. Te apoyamos en la implementación de estas soluciones para obtener mejor rendimiento, calidad y rentabilidad por kilo de tu producto final.</p><div class="hero-actions"><a class="btn btn-primary" href="contacto.html">Solicitar más información</a><a class="btn btn-outline" href="productos.html">Ver líneas de producto</a></div></div></div>
+  <div class="container"><div>
+    <div class="kicker">Soporte técnico en planta — Chile</div>
+    <h1>Menos merma, mejor rendimiento, mejor percepción de valor</h1>
+    <p>Las plantas pierden rendimiento, presentación y margen en puntos del proceso que tienen solución. TQI Chile aplica tecnología alimentaria europea con soporte técnico directo en planta — desde el diagnóstico hasta el escalamiento. Sin intermediarios.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="contacto.html">Agendar visita técnica</a>
+      <a class="btn btn-outline" href="productos.html">Ver líneas de producto</a>
+    </div>
+  </div></div>
 </section>
-<section class="section tequisa-band"><div class="container tequisa-grid"><div><div class="kicker">Empresa matriz</div><h2>Tecnología Europea en tu planta</h2><p class="section-lead">TEQUISA desarrolla las soluciones. TQI Chile te ayuda a implementarlas, desarrollar pruebas, apoyarte en aspectos documentales  y te acompaña durante el proceso.</p><div class="trust-row"><span>+40 años</span><span>+100 productos</span><span>29 países</span><span>Apoyo en cumplimiento normativo</span></div></div><aside class="tequisa-card"><h3>Qué aporta este respaldo</h3><ul><li>Fichas técnicas y documentos respaldados por TEQUISA</li><li>Líneas de productos para salmón, pesca blanca, crustáceos, cefalópodos, bivalvos y otros mariscos</li><li>Soporte en planta, generación de protocolos, apoyo en declaración en PAC, seguimiento de nuestros clientes.</li></ul><p class="tequisa-rep">Andrew MacKinnon, Médico Veterinario. Antes de representar estas soluciones en Chile, las evaluó y aplicó como Gerente de Producción en planta de proceso de centolla y centollón.</p><a class="card-link" href="https://tequisa.com/" target="_blank" rel="noopener">Ver sitio oficial TEQUISA</a></aside></div></section>
-<section class="section alt"><div class="container"><div class="section-head"><div class="chevron"></div><div><div class="kicker">ENFOQUES </div><h2>¿Qué deseas mejorar?</h2><p class="section-lead">Puedes optar por soluciones orientadas a control microbiológico o bien otras que te permitirán mejorar rendimiento, calidad y presentación</p></div></div><div class="cards decision-cards"><article class="card"><div class="label">Rendimiento y textura</div><h3>ANPEIX 100 PLUS SP</h3><p>Reduce drip, estabiliza el producto, mejora color, textura, rendimiento y la percepción de valor del cliente final</p><a class="card-link" href="productos.html#anpeix">VER MÁS</a></article><article class="card"><div class="label">GLASEO Y PROTECCIÓN</div><h3>ANPEX GLASS</h3><p>Mejor cobertura, menos deshidratación durante la congelación, producto más limpio al desglasear. </p><a class="card-link" href="productos.html#glass">VER MÁS</a></article><article class="card"><div class="label">LISTERIA MONOCYTOGENES</div><h3>PhageGuard</h3><p>Reducción / eliminación de Listeria en productos listos para consumo. Aplicación directa sobre producto o en superficies.</p><a class="card-link" href="phageguard.html">Ver PhageGuard</a></article></div></div></section>
-<section class="section"><div class="container split visual-comparison"><div><div class="kicker">Resultados en terreno</div><h2>ANPEIX 100 PLUS SP</h2><p class="section-lead">Comparación visual de resultados en textura, color, cocción, resultados. Las diferencias organolépticas también se reflejan en un mejor rendimiento y estabilidad del producto final.</p></div><div class="index-visual-carousel media-carousel" data-carousel>
+
+<!-- BIFURCACIÓN: DOS PROBLEMAS, DOS COMPRADORES -->
+<section class="section alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="chevron"></div>
+      <div>
+        <div class="kicker">¿Cuál es tu problema?</div>
+        <h2>Dos tipos de mejora, perfiles distintos.</h2>
+        <p class="section-lead">Rendimiento y calidad son decisiones de producción y gerencia. Control microbiológico es una decisión de inocuidad y QA. Cada una tiene su camino.</p>
+      </div>
+    </div>
+    <div class="split-enfoques">
+      <article class="split-card rendimiento">
+        <div class="label">Rendimiento y calidad de producto</div>
+        <h3>Menos drip, mejor textura, más rendimiento por kilo</h3>
+        <p>ANPEIX 100 PLUS SP y ANPEX GLASS están diseñados para mejorar lo que el comprador final percibe y lo que la planta retiene. El resultado es medible en peso, color, textura y comportamiento post cocción.</p>
+        <ul>
+          <li>Reducción de pérdida de líquidos propios</li>
+          <li>Mejor presentación y color en producto terminado</li>
+          <li>Mayor rendimiento en glaseo y menor deshidratación</li>
+        </ul>
+        <a class="card-link" href="productos.html#anpeix">Ver productos de rendimiento →</a>
+      </article>
+      <article class="split-card inocuidad">
+        <div class="label">Control microbiológico</div>
+        <h3>Intervención específica sobre Listeria y Salmonella</h3>
+        <p>PhageGuard actúa sobre el patógeno objetivo sin afectar color, sabor ni textura del producto. Complementa BPM y HACCP — no los reemplaza. Aplicable por aspersión, inmersión o intra-pack.</p>
+        <ul>
+          <li>Bacteriófagos específicos para Listeria spp. o Salmonella spp.</li>
+          <li>Compatible con sistemas de validación QA</li>
+          <li>Sin impacto sensorial esperado cuando se aplica correctamente</li>
+        </ul>
+        <a class="card-link" href="phageguard.html">Ver PhageGuard →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CARRUSEL ANPEIX -->
+<section class="section"><div class="container split visual-comparison"><div>
+  <div class="kicker">Lo que ve el comprador final importa</div>
+  <h2>La diferencia es visible antes y después de cocción</h2>
+  <p class="section-lead">Comparación directa entre porción tratada y control, misma pieza de origen. Las diferencias organolépticas se traducen en rendimiento y en el valor percibido por el cliente final.</p>
+</div><div class="index-visual-carousel media-carousel" data-carousel>
   <div class="carousel-track">
     <figure class="carousel-slide is-active">
       <div class="carousel-image-frame"><img src="assets/img/anpeix-slide-09b-salmon-vacpack2.webp" alt="Porciones de salmón envasadas al vacío — ANPEIX 100 PLUS SP" loading="lazy" style="object-position: center 68%;"></div>
-      <figcaption contenteditable="true">Porción preparada con ANPEIX 100 PLUS SP. La materia prima de origen es Salmón Salar industrial. Color más intenso, menor drip.</figcaption>
+      <figcaption>Porción preparada con ANPEIX 100 PLUS SP. Salmón Salar industrial. Color más intenso, menor drip.</figcaption>
     </figure>
     <figure class="carousel-slide">
       <div class="carousel-image-frame"><img src="assets/img/anpeix-slide-10-salmon-cocido-tratado.webp" alt="Salmón cocido tratado — evaluación post cocción ANPEIX 100 PLUS SP" loading="lazy"></div>
-      <figcaption contenteditable="true">Porción preparada con ANPEIX 100 PLUS SP. El consumidor percibe un producto de mayor valor y experiencia culinaria al ser un pescado más jugoso, firme y con sabor intenso.</figcaption>
+      <figcaption>Porción tratada post cocción. El consumidor percibe un producto más jugoso, firme y con sabor más intenso.</figcaption>
     </figure>
     <figure class="carousel-slide">
-      <div class="carousel-image-frame"><img src="assets/img/anpeix-slide-08-salmon-vacpack.webp" alt="Porción de salmón envasado al vacío tratado con ANPEIX 100 PLUS SP" loading="lazy" style="object-position: center 12%;"></div>
-      <figcaption contenteditable="true">Porción control, mismo origen de la primera imagen. Notar color menos intenso. En datos obtenidos, el drip fue mayor.</figcaption>
+      <div class="carousel-image-frame"><img src="assets/img/anpeix-slide-08-salmon-vacpack.webp" alt="Porción de salmón envasado al vacío — control sin ANPEIX 100 PLUS SP" loading="lazy" style="object-position: center 12%;"></div>
+      <figcaption>Porción control, mismo origen. Color menos intenso, drip mayor.</figcaption>
     </figure>
     <figure class="carousel-slide">
-      <div class="carousel-image-frame"><img src="assets/img/anpeix-slide-09-salmon-cocido-control.webp" alt="Salmón cocido control — evaluación post cocción ANPEIX 100 PLUS SP" loading="lazy"></div>
-      <figcaption contenteditable="true">Porción control cocida. Notar presentación menos atractiva para el consumidor, existiendo una diferencia notable en el resultado final y el valor percibido.</figcaption>
+      <div class="carousel-image-frame"><img src="assets/img/anpeix-slide-09-salmon-cocido-control.webp" alt="Salmón cocido control — evaluación post cocción sin ANPEIX 100 PLUS SP" loading="lazy"></div>
+      <figcaption>Porción control post cocción. Presentación menos atractiva, diferencia notable en valor percibido.</figcaption>
     </figure>
   </div>
   <div class="carousel-controls" aria-label="Controles de carrusel">
@@ -68,8 +140,29 @@ body{background:#FAFAFC;margin:0}
     <button type="button" class="carousel-btn" data-carousel-next aria-label="Imagen siguiente">›</button>
   </div>
 </div></div></section>
-<section class="section alt"><div class="container"><div class="section-head"><div class="chevron"></div><div><div class="kicker">Implementación</div><h2>¿Cómo probamos en tu planta?</h2><p class="section-lead">Cada prueba se diseña en base a tu proceso y lo que necesites. El objetivo es lograr resultados medibles</p></div></div><div class="process"><div class="step"><div class="step-num">01</div><h3>Diagnóstico</h3><p>Qué produces, búsqueda de puntos de mejora y objetivos.</p></div><div class="step"><div class="step-num">02</div><h3>Protocolo</h3><p>Dosis, temperatura, tiempo, control y criterios de medición.</p></div><div class="step"><div class="step-num">03</div><h3>Prueba en planta</h3><p>Ejecución con acompañamiento técnico y registro.</p></div><div class="step"><div class="step-num">04</div><h3>Resultado</h3><p>Datos comparables sobre pruebas y control.</p></div></div></div></section>
-<section class="cta-band"><div class="container"><h2>Conversemos</h2><p>Si tienes un problema de rendimiento, presentación o desafíos microbiológicos, podemos ayudarte.</p><div class="cta-actions"><a class="btn btn-primary" href="contacto.html">Solicitar contacto</a><a class="btn btn-secondary" href="https://wa.me/56998791270?text=Hola%2C%20quiero%20evaluar%20una%20prueba%20TQI%20Chile%20en%20planta" target="_blank" rel="noopener noreferrer">WhatsApp directo</a></div></div></section>
+
+<!-- PROCESO -->
+<section class="section alt"><div class="container"><div class="section-head"><div class="chevron"></div><div>
+  <div class="kicker">Implementación</div>
+  <h2>Una prueba diseñada para tu proceso</h2>
+  <p class="section-lead">No es una demo genérica. Se diseña con tus tiempos, tu matriz y tus variables críticas. El resultado es un dato tuyo, no un argumento nuestro.</p>
+</div></div><div class="process">
+  <div class="step"><div class="step-num">01</div><h3>Diagnóstico</h3><p>Qué produces, búsqueda de puntos de mejora y objetivos.</p></div>
+  <div class="step"><div class="step-num">02</div><h3>Protocolo</h3><p>Dosis, temperatura, tiempo, control y criterios de medición.</p></div>
+  <div class="step"><div class="step-num">03</div><h3>Prueba en planta</h3><p>Ejecución con acompañamiento técnico y registro.</p></div>
+  <div class="step"><div class="step-num">04</div><h3>Resultado</h3><p>Datos comparables entre tratamiento y control.</p></div>
+</div></div></section>
+
+<!-- CTA FINAL -->
+<section class="cta-band"><div class="container">
+  <h2>La prueba no interrumpe tu proceso</h2>
+  <p>Se diseña para correr en paralelo con tu operación normal. Si no hay resultado medible, no hay nada que escalar.</p>
+  <div class="cta-actions">
+    <a class="btn btn-primary" href="contacto.html">Agendar visita técnica</a>
+    <a class="btn btn-secondary" href="https://wa.me/56998791270?text=Hola%2C%20quiero%20evaluar%20una%20prueba%20TQI%20Chile%20en%20planta" target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+  </div>
+</div></section>
+
 </main>
 <a class="wa-float" href="https://wa.me/56998791270?text=Hola%2C%20quiero%20conversar%20sobre%20soluciones%20TQI%20Chile%20para%20planta%20de%20proceso" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer"><svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
   <path d="M16.02 3.2A12.73 12.73 0 0 0 5.14 22.5L3.6 28.8l6.45-1.52A12.78 12.78 0 1 0 16.02 3.2Zm0 2.28a10.48 10.48 0 0 1 8.88 16.05 10.46 10.46 0 0 1-13.86 3.5l-.46-.25-3.68.86.88-3.58-.3-.49A10.46 10.46 0 0 1 16.02 5.48Zm-4.13 4.73c-.24 0-.62.09-.95.44-.33.36-1.25 1.22-1.25 2.98 0 1.76 1.28 3.46 1.46 3.7.18.24 2.47 3.96 6.12 5.39 3.03 1.19 3.65.95 4.31.89.66-.06 2.13-.87 2.43-1.71.3-.84.3-1.56.21-1.71-.09-.15-.33-.24-.69-.42-.36-.18-2.13-1.05-2.46-1.17-.33-.12-.57-.18-.81.18-.24.36-.93 1.17-1.14 1.41-.21.24-.42.27-.78.09-.36-.18-1.52-.56-2.9-1.78-1.07-.95-1.79-2.13-2-2.49-.21-.36-.02-.56.16-.74.16-.16.36-.42.54-.63.18-.21.24-.36.36-.6.12-.24.06-.45-.03-.63-.09-.18-.81-1.95-1.11-2.67-.29-.7-.59-.6-.81-.61h-.68Z"/>
@@ -82,7 +175,7 @@ body{background:#FAFAFC;margin:0}
         <span class="footer-brand-country">Chile</span>
       </a>
       <p>Tecnología alimentaria aplicada para plantas pesqueras, salmoneras y alimentos industriales.</p>
-          </div>
+    </div>
     <nav class="footer-col" aria-label="Soluciones TQI Chile">
       <h3>Soluciones</h3>
       <a href="productos.html#anpeix">ANPEIX 100 PLUS SP</a>
@@ -91,7 +184,6 @@ body{background:#FAFAFC;margin:0}
       <a href="asesoria.html">Asesoría técnica</a>
       <a href="resultados.html">Resultados</a>
     </nav>
-
     <nav class="footer-col" aria-label="Empresa y recursos">
       <h3>Empresa</h3>
       <a href="empresa.html">Empresa</a>
@@ -100,7 +192,6 @@ body{background:#FAFAFC;margin:0}
       <a href="politica-privacidad.html">Política de privacidad</a>
       <a href="https://tequisa.com/" target="_blank" rel="noopener">TEQUISA · España</a>
     </nav>
-
     <div class="footer-col footer-contact">
       <h3>Contacto</h3>
       <a href="mailto:andrew@tqichile.cl">andrew@tqichile.cl</a>

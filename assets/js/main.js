@@ -77,3 +77,18 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
     stop: () => window.clearInterval(timer)
   };
 })();
+
+// Product nav active state
+(function(){
+  var links = document.querySelectorAll('.prod-nav-link');
+  if(!links.length) return;
+  var sections = Array.from(links).map(function(l){ return document.querySelector(l.getAttribute('href')); });
+  function update(){
+    var scrollY = window.scrollY + 180;
+    var active = null;
+    sections.forEach(function(s,i){ if(s && s.offsetTop <= scrollY) active = i; });
+    links.forEach(function(l,i){ l.classList.toggle('is-active', i === active); });
+  }
+  window.addEventListener('scroll', update, {passive:true});
+  update();
+})();

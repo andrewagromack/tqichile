@@ -527,9 +527,9 @@ textarea { min-height: 132px; resize: vertical; }
   border: 1.5px solid #D8D2EA; border-radius: var(--radius); overflow: hidden;
   background: #F7F5FC; box-shadow: 0 16px 42px rgba(30,17,71,.10);
 }
-.carousel-track { position: relative; min-height: 320px; }
+.carousel-track { position: relative; min-height: 302px; }
 .carousel-slide { display: none; margin: 0; }
-.carousel-slide.is-active { display: grid; grid-template-rows: minmax(230px, 1fr) auto; min-height: 320px; }
+.carousel-slide.is-active { display: grid; grid-template-rows: 230px auto; min-height: 302px; }
 .carousel-placeholder {
   display: grid; place-items: center; text-align: center; padding: 28px;
   border-bottom: 1px dashed #D4D0E5;
@@ -541,7 +541,7 @@ textarea { min-height: 132px; resize: vertical; }
 .carousel-slide figcaption {
   min-height: 72px; height: 72px; padding: 16px 18px;
   color: var(--muted); font-size: 13px; line-height: 1.55;
-  background: #FCFBFF; border-top: 1px solid #DED8EE;
+  background: #FCFBFF; border-top: none;
   outline: none; display: flex; align-items: center; box-sizing: border-box;
 }
 .carousel-slide figcaption:focus { box-shadow: inset 0 0 0 2px rgba(232,81,26,.28); }
@@ -559,7 +559,7 @@ textarea { min-height: 132px; resize: vertical; }
 .carousel-dots { display: flex; gap: 7px; align-items: center; }
 .carousel-dot { width: 8px; height: 8px; border: 0; border-radius: 999px; background: #D4D0E5; padding: 0; transition: width .2s ease, background .2s ease; }
 .carousel-dot.is-active { width: 22px; background: var(--orange); }
-.carousel-image-frame { width: 100%; height: 230px; min-height: 230px; overflow: hidden; background: #fff; border-bottom: 1px solid #DED8EE; }
+.carousel-image-frame { width: 100%; height: 230px; min-height: 230px; overflow: hidden; background: #fff; }
 .carousel-image-frame img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center center; }
 
 /* ── Products hero ── */
@@ -877,7 +877,9 @@ textarea { min-height: 132px; resize: vertical; }
 .result-metrics span   { color: var(--muted); font-size: 12px; line-height: 1.35; font-weight: 700; }
 .result-media { width: 100%; justify-self: end; }
 .result-media .carousel-track, .result-media .carousel-slide.is-active { min-height: 390px; }
-.result-media .carousel-slide.is-active { grid-template-rows: minmax(280px, 1fr) auto; }
+.result-media .carousel-slide.is-active { grid-template-rows: 318px auto; }
+.result-media .carousel-image-frame { height: 318px; min-height: 318px; max-height: 318px; }
+.result-media .carousel-image-frame img { object-position: center 40%; }
 
 /* TEQUISA rep credential */
 .tequisa-rep { margin: 14px 0 16px; font-size: 13px; line-height: 1.55; color: var(--text-muted, #6B6480); border-left: 3px solid var(--orange, #E8511A); padding-left: 10px; }
@@ -885,8 +887,8 @@ textarea { min-height: 132px; resize: vertical; }
 /* Index visual carousel */
 .visual-comparison { align-items: center; }
 .index-visual-carousel { width: 100%; max-width: 720px; justify-self: center; }
-.index-visual-carousel .carousel-track { min-height: 430px; }
-.index-visual-carousel .carousel-slide.is-active { min-height: 430px; grid-template-rows: minmax(310px, 1fr) auto; }
+.index-visual-carousel .carousel-track { min-height: 0; }
+.index-visual-carousel .carousel-slide.is-active { min-height: 0; grid-template-rows: auto auto; }
 .index-visual-carousel .carousel-image-frame { height: 310px; min-height: 310px; max-height: 310px; }
 
 /* ── MailerLite form ── */
@@ -1034,9 +1036,10 @@ textarea { min-height: 132px; resize: vertical; }
   .result-card::before { left: 16px; right: 16px; }
   .result-metrics { grid-template-columns: 1fr; }
   .result-media .carousel-track, .result-media .carousel-slide.is-active { min-height: 330px; }
-  .result-media .carousel-slide.is-active { grid-template-rows: minmax(220px, 1fr) auto; }
-  .index-visual-carousel .carousel-track, .index-visual-carousel .carousel-slide.is-active { min-height: 340px; }
-  .index-visual-carousel .carousel-slide.is-active { grid-template-rows: minmax(220px, 1fr) auto; }
+  .result-media .carousel-slide.is-active { grid-template-rows: 258px auto; }
+  .result-media .carousel-image-frame { height: 258px; min-height: 258px; max-height: 258px; }
+  .index-visual-carousel .carousel-track, .index-visual-carousel .carousel-slide.is-active { min-height: 0; }
+  .index-visual-carousel .carousel-slide.is-active { grid-template-rows: auto auto; }
   .index-visual-carousel .carousel-image-frame { height: 220px; min-height: 220px; max-height: 220px; }
   .phage-visual-carousel .carousel-track, .phage-visual-carousel .carousel-slide.is-active { min-height: 340px; }
   .phage-visual-carousel .carousel-slide.is-active { grid-template-rows: minmax(220px, 1fr) auto; }

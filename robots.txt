@@ -1,3 +1,20 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://tqichile.cl/sitemap.xml
+
+# AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# LLM context file
+# https://tqichile.cl/llms.txt

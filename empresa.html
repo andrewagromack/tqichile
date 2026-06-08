@@ -11,8 +11,10 @@ body{background:#FAFAFC;margin:0}
 /* Andrew profile card */
 .andrew-section{background:#fff}
 .andrew-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
-.andrew-photo-slot{background:#F0EDF8;border-radius:12px;aspect-ratio:3/4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;color:#8B82B0;font-size:0.82rem;text-align:center;padding:1rem}
-.andrew-photo-slot svg{opacity:0.35}
+.andrew-photo-wrap{display:flex;justify-content:center;align-items:flex-start}
+.andrew-photo-frame{position:relative;border-radius:16px;overflow:hidden;background:#F0EDF8;border:3px solid rgba(45,27,105,0.12);box-shadow:0 8px 40px rgba(45,27,105,0.13);max-width:380px;width:100%}
+.andrew-photo-frame::before{content:'';position:absolute;inset:0;border-radius:14px;background:linear-gradient(180deg,transparent 65%,rgba(30,17,71,0.10) 100%);z-index:1;pointer-events:none}
+.andrew-photo-frame img{display:block;width:100%;height:auto;border-radius:14px}
 .andrew-copy{display:flex;flex-direction:column;gap:1.25rem}
 .andrew-name{font-size:1.5rem;font-weight:800;color:#1E1147;margin:0;line-height:1.2}
 .andrew-title{font-size:0.82rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#F05A22;margin:0}
@@ -30,7 +32,8 @@ body{background:#FAFAFC;margin:0}
 
 @media(max-width:860px){
   .andrew-grid{grid-template-columns:1fr}
-  .andrew-photo-slot{aspect-ratio:16/7}
+  .andrew-photo-wrap{justify-content:center}
+  .andrew-photo-frame{max-width:280px}
   .tequisa-grid{grid-template-columns:1fr}
   .tequisa-stats{flex-direction:row;flex-wrap:wrap}
   .tequisa-stat{flex:1;min-width:120px}
@@ -66,9 +69,10 @@ body{background:#FAFAFC;margin:0}
 <section class="section andrew-section" id="andrew">
   <div class="container">
     <div class="andrew-grid">
-      <div class="andrew-photo-slot" aria-label="Foto Andrew MacKinnon">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="24" cy="18" r="8" stroke="#2D1B69" stroke-width="2"/><path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#2D1B69" stroke-width="2" stroke-linecap="round"/></svg>
-        <span>Foto Andrew MacKinnon</span>
+      <div class="andrew-photo-wrap">
+        <div class="andrew-photo-frame">
+          <img src="assets/img/andrew-mackinnon.webp" alt="Andrew MacKinnon — TQI Chile" loading="eager" decoding="async" width="800" height="980">
+        </div>
       </div>
       <div class="andrew-copy">
         <div>

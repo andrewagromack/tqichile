@@ -52,6 +52,7 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
 })();
 
 // Hero dinámico del index: texto fijo, imágenes rotando cada 5 segundos
+// Optimizado para LCP: la primera imagen carga de inmediato; las demás se hidratan en idle/post-load.
 (function () {
   const hero = document.querySelector('.index-page .hero-dynamic-media');
   if (!hero) return;
@@ -60,21 +61,38 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   if (slides.length < 2) return;
 
   let current = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
+  let timer = null;
+
+  function hydrateDeferredSlides() {
+    slides.forEach((slide) => {
+      if (slide.dataset.srcset && !slide.getAttribute('srcset')) slide.setAttribute('srcset', slide.dataset.srcset);
+      if (slide.dataset.src && !slide.getAttribute('src')) slide.setAttribute('src', slide.dataset.src);
+    });
+  }
 
   function show(index) {
     current = (index + slides.length) % slides.length;
     slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
   }
 
-  show(current);
-  const timer = window.setInterval(() => show(current + 1), 5000);
+  function startRotator() {
+    if (timer) return;
+    hydrateDeferredSlides();
+    show(current);
+    timer = window.setInterval(() => show(current + 1), 5000);
+  }
+
+  const idle = window.requestIdleCallback || function (cb) { return window.setTimeout(cb, 900); };
+  if (document.readyState === 'complete') idle(startRotator, { timeout: 1800 });
+  else window.addEventListener('load', () => idle(startRotator, { timeout: 1800 }), { once: true });
 
   window.__TQI_HERO_ROTATOR__ = {
     active: true,
     slides: slides.length,
     interval: 5000,
     current: () => current,
-    stop: () => window.clearInterval(timer)
+    start: startRotator,
+    stop: () => { if (timer) window.clearInterval(timer); timer = null; }
   };
 })();
 
@@ -91,4 +109,54 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   }
   window.addEventListener('scroll', update, {passive:true});
   update();
+})();
+
+
+// Tracking diferido: evita que Analytics y Meta Pixel compitan con el primer render/LCP en mobile.
+(function () {
+  const GA_ID = 'G-RV6DV8XP24';
+  const META_PIXEL_ID = '3374175949411724';
+  let gaLoaded = false;
+  let metaLoaded = false;
+
+  function appendScript(src) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = src;
+    document.head.appendChild(script);
+    return script;
+  }
+
+  function loadGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    appendScript('https://www.googletagmanager.com/gtag/js?id=' + GA_ID);
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+  }
+
+  function loadMetaPixel() {
+    if (metaLoaded) return;
+    metaLoaded = true;
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+
+  function scheduleTracking() {
+    window.setTimeout(loadGA, 1200);
+    window.setTimeout(loadMetaPixel, 2200);
+  }
+
+  if (document.readyState === 'complete') scheduleTracking();
+  else window.addEventListener('load', scheduleTracking, { once: true });
 })();
